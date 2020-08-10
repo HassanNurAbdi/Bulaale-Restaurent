@@ -1,0 +1,525 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Site1.master.vb" Inherits="Bulaale_Super_market.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    
+ 
+    <link href="mys/StyleSheet1.css" rel="stylesheet" />
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="Scripts/jquery-3.0.0.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid bg-light">
+          <div class="mt-3">
+            <nav class="navbar navbar-expand-lg navbar-light " style="height:130px; background-color:#CA2D22;color:white;border-radius: 11px 40px;">
+                <a class="navbar-brand " href="#" style="font-weight: bold; font-size: 40px; color:white">
+                <span><i class="fab fa-gitkraken" style="font-size:30;color:white;"></i></span>
+                    E-Bulaale Restuarant
+                </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <div class="collapse navbar-collapse mt-2" id="collapsibleNavbar" >
+                    <ul class="navbar-nav mr-auto" style="font-size:18px; font-weight:bold">
+                        <li class="nav-item active text-white">
+                            <a class="nav-link" href="Home.aspx" style="color:white">Home</a>
+                        </li>
+                         <li class="nav-item active text-white">
+                            <a class="nav-link" href="AboutUs.aspx" style="color:white">about</a>
+                        </li>
+                         <li class="nav-item active text-white mt-2">
+                             <asp:Label ID="lbluser" runat="server" Text="" Font-Size="14" ForeColor="#FFFF66"></asp:Label>
+                        </li>
+                       
+                    </ul>
+                    <ul class="navbar-nav text-white" style="font-size:18px; font-weight:bold">
+                        <li class="nav-item active text-white">
+                            <asp:LinkButton Class="nav-link" ID="lkviewproduct" runat="server" style="color:white">view product</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active text-white">
+                            <asp:LinkButton Class="nav-link" ID="lkuserlogin" runat="server"  data-toggle="modal" data-target="#mymodal" style="color:white">User Login</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active text-white">
+                            <asp:LinkButton Class="nav-link" ID="lksignUp" runat="server"  data-toggle="modal" data-target="#mymodalSignUp" style="color:white">Sing Up</asp:LinkButton>
+                        </li>
+                        <li class="nav-item active text-white">
+                            <asp:LinkButton class="nav-link" ID ="lkLogout"
+                                runat="server" style="color:white">LoginOut</asp:LinkButton>
+                        </li>
+                         <li class="nav-item active text-white">
+                            <asp:LinkButton class="nav-link" ID ="lkHelloUser"
+                                runat="server" Font-Bold="True" Font-Names="Segoe UI" ForeColor="Blue">Hello User</asp:LinkButton>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </nav>
+          </div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                 <div class="container-fluid m-0" style="height:900px;">
+
+                 </div>
+            </asp:ContentPlaceHolder>
+
+
+
+
+   <footer class="page-footer font-small" style="background-color:#CA2D22; color:white">
+
+  <!-- Footer Links -->
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row text-center d-flex justify-content-center pt-5 mb-3">
+         <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <asp:LinkButton class="nav-link" ID ="lkCustomer"
+           runat="server" ForeColor="White">Customers</asp:LinkButton>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <asp:LinkButton class="nav-link" ID ="lkproduct"
+           runat="server" ForeColor="White">Products</asp:LinkButton>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+     <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <asp:LinkButton class="nav-link" ID ="lkAdmin"
+           runat="server" data-toggle="modal" data-target="#myAdminmodal" ForeColor="White">Admin</asp:LinkButton>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <asp:LinkButton class="nav-link" ID ="lkAboutUS"
+           runat="server" ForeColor="White">About Us</asp:LinkButton>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+        <!-- Grid column -->
+      <div class="col-md-2 mb-3">
+        <h6 class="text-uppercase font-weight-bold">
+          <asp:LinkButton class="nav-link" ID ="lksalesOrders"
+           runat="server" ForeColor="White">SalesOrder</asp:LinkButton>
+        </h6>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="rgba-white-light" style="margin: 0 15%;">
+
+    <!-- Grid row-->
+    <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
+
+      <!-- Grid column -->
+      <div class="col-md-8 col-12 mt-5">
+        <p style="line-height: 1.7rem">E-Bulaale Restuarant waa ka dalbo oo hada hel
+            waxaan diyaar u nahay inaa macaamiilka meel walbo u ka joogo<br/> caasimada iyo aga gaaraheeda<br/> inu ku heli doono<br />
+            cunada uu naga dalbade si dhaqso ah 
+        </p>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+    <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
+
+    <!-- Grid row-->
+    <div class="row pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-12">
+
+        <div class="mt-3 text-center">
+
+          <!-- Facebook -->
+          <a class="fb-ic">
+            <i class="fab fa-facebook-f fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Twitter -->
+          <a class="tw-ic">
+            <i class="fab fa-twitter fa-lg white-text mr-4"> </i>
+          </a>
+          <!-- Google +-->
+          <a class="gplus-ic">
+            <i class="fab fa-google-plus-g fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Linkedin -->
+          <a class="li-ic">
+            <i class="fab fa-linkedin-in fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Instagram-->
+          <a class="ins-ic">
+            <i class="fab fa-instagram fa-lg white-text mr-4"> </i>
+          </a>
+          <!--Pinterest-->
+          <a class="pin-ic">
+            <i class="fab fa-pinterest fa-lg white-text"> </i>
+          </a>
+
+        </div>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="Home.aspx"> E-Bulaale Restuarant</a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+
+</div>
+       <%-- <footer>
+            <div id="footer1" class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="linkButton6"
+                                runat="server">Admin Login</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="linkButton11"
+                                runat="server">publisher management</asp:LinkButton>
+                            &nbsp;
+                             <asp:LinkButton class="footerlinks" ID="linkButton8"
+                                runat="server">Member Management</asp:LinkButton>
+                            &nbsp;
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <footer>
+            
+            <div id="footer2" class="container-fluid">
+                  <div class="row">
+                     <div class="col-xs-12 col-md-12 text-center">
+                           <div class="color:whitesmoth"><p>&copy All Right Reversed.<a
+                             class="footerlinks" href="#" target="_blank">&nbsp;&nbsp;&nbsp;Group 8</a></p>  </div>
+                      </div>
+                </div>
+                </div>
+               
+            </footer>
+    --%>
+        <!-- Footer -->
+
+        <div class="modal fade" id="mymodal">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <h3>User Login</h3>
+                         </div>
+
+                          <div class="modal-body">
+
+                              <div class="card">
+                   <div class="card-body">
+                       <div class="row">
+                           <div class="col pb-2">
+                               <center>
+                                   <img width="150px"  src="imgs/user.png" />
+                               </center>
+                           </div>
+
+                           
+                       </div>
+               
+                       <div class="row">
+                           <div class="col">
+                               <label>Membar ID</label>
+                               <div class="form-group">
+                                   <asp:TextBox class="form-control" ID="txtMemberusername" runat="server" placeholder="member ID"></asp:TextBox>
+                                  
+                               </div>
+                               <div class="form-group">
+                                   
+                               </div>
+                                <label>Password</label>
+                               <div class="form-group">
+                                   <asp:TextBox class="form-control" ID="txtMemberpassword" runat="server" placeholder="pasword" TextMode="Password"></asp:TextBox>
+                                
+                               </div>
+                               <div class="form-group">
+                                   <asp:Button CssClass="btn btn-success btn-block btn-lg" ID="Button1" runat="server" Text="Login" />
+                               </div>
+                               <div class="form-group">
+                                   <input class="btn btn-info btn-block btn-lg" id="Button2" type="button" value="Sing Up" data-dismiss="modal" data-toggle="modal" data-target="#mymodalSignUp"  />
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+       
+                </div>
+
+
+                            
+
+
+                         </div>
+
+                     </div>
+                 </div>
+             </div>
+
+
+
+
+
+        <div class="modal fade" id="mymodalSignUp">
+                 <div class="modal-dialog modal-lg">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <h3>Sign Up</h3>
+                         </div>
+
+                          <div class="modal-body">
+
+                            <div class="container">
+                                   <div class="row">
+                                       <div class="col-md-10 mx-auto">
+                                           <div class="card">
+                                               <div class="card-body">
+                                                   <div class="row">
+                                                       <div class="col">
+                                                           <center>
+                                                               <img width="150px"  src="imgs/signup.png" />
+                                                           </center>
+                                                       </div>
+
+                           
+                                                   </div>
+                                                   <div class="row">
+                                                       <div class="col">
+                                                           <center>
+                                                              Registration page
+                                                           </center>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row">
+                                                       <div class="col">
+                                                           <center>
+                                                              <hr />
+                                                           </center>
+                                                       </div>
+                                                   </div>
+                                                    <div class="row">
+                                                       <div class="col">
+                                                            <label>Full Name</label>
+                                                           <div class="form-group">
+                                                               <asp:TextBox class="form-control" ID="txtFullname" runat="server" placeholder="Fullname"></asp:TextBox>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row">
+                                                       <div class="col-md-6">
+                                                            <label>Contact No</label>
+                                                           <div class="form-group">
+                                                               <asp:TextBox class="form-control" ID="txtContactno" runat="server" placeholder="Contact No" TextMode="Number"></asp:TextBox>
+                                                           </div>
+                                                       </div>
+                                                           <div class="col-md-6">
+                                                            <label>Email</label>
+                                                           <div class="form-group">
+                                                               <asp:TextBox class="form-control" ID="txtEmail" runat="server" placeholder="Examaple@group.com" TextMode="Email"></asp:TextBox>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                    <div class="row">
+                                                       <div class="col">
+                                                            <label>State</label>
+                                                           <div class="form-group">
+                                                               <asp:DropDownList CssClass="form-control" ID="cboState" runat="server">
+                                                                   <asp:ListItem Text="Select" Value="select" />
+                                                          <asp:ListItem Text="Boondheere" Value="Boondheere" />
+                                                          <asp:ListItem Text="CabdiCasiis" Value="CabdiCasiis" />
+                                                          <asp:ListItem Text="Dayniile" Value="Dayniile" />
+                                                          <asp:ListItem Text="Dharkenley" Value="Dharkenley" />
+                                                          <asp:ListItem Text="Hodan" Value="Hodan" />
+                                                          <asp:ListItem Text="Howlwadaag" Value="Howlwadaag" />
+                                                          <asp:ListItem Text="Hiliwaa" Value="Hiliwaa" />
+                                                          <asp:ListItem Text="Kaxda" Value="Kaxda" />
+                                                          <asp:ListItem Text="Kaaraan" Value="Kaaraan" />
+                                                          <asp:ListItem Text="Shibis" Value="Shibis" />
+                                                          <asp:ListItem Text="Shangaani" Value="Shangaani" />
+                                                          <asp:ListItem Text="Waaberi" Value="Waaberi" />
+                                                          <asp:ListItem Text="Wadajir" Value="Wadajir" />
+                                                          <asp:ListItem Text="Warta-Nabadda" Value="Warta-Nabadda" />
+                                                          <asp:ListItem Text="Xamar-jajab" Value="Xamar-jajab" />
+                                                          <asp:ListItem Text="Xamar-weyne" Value="Xamar-weyne" />
+                                                          <asp:ListItem Text="Yaaqshiid" Value="Yaaqshiid" />
+                                                               </asp:DropDownList>
+                                                           </div>
+                                                       </div>
+                                                      
+                                                   </div>
+                                                     <div class="row">
+                                                       <div class="col">
+                                                           <label>Full Address</label>
+                                                           <div class="form-group">
+                                                               <asp:TextBox class="form-control" ID="txtAddress" runat="server" placeholder="Address" TextMode="MultiLine" Rows="2"></asp:TextBox>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row">
+                          
+                                                       <div class="col">
+                                                            <center>
+                                                           <span class="badge badge-pill badge-info">Login Credensials</span>
+                                                            </center>
+                                                       </div>
+                              
+                                                   </div>
+                                                    <div class="row">
+                                                       <div class="col-md-6">
+                                                            <label>User ID</label>
+                                                           <div class="form-group">
+                                                               <asp:TextBox class="form-control" ID="txtSignupuserId" runat="server" placeholder="User ID" ></asp:TextBox>
+                                                           </div>
+                                                       </div>
+                                                           <div class="col-md-6">
+                                                            <label>Password</label>
+                                                           <div class="form-group">
+                                                               <asp:TextBox class="form-control" ID="txtSignuppassword" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                                           </div>
+                                                       </div>
+                                                   </div>
+                                                   <div class="row">
+                                                           <div class="col">
+                                                              <div class="form-group">
+                                                                   <asp:Button CssClass="btn btn-success btn-block btn-lg" ID="btnSignUp" runat="server" Text="SignUp" />
+                                                               </div>
+                                                           </div>
+
+                                                          <div class="col ml-2">
+                                                              <div class="form-group">
+                                                                   <asp:Button CssClass="btn btn-warning btn-block btn-lg" ID="btnCancel" runat="server" Text="Cancel" />
+                                                               </div>
+          
+                                                       </div>
+                                                   </div>
+                                               </div>
+       
+                                            </div>
+       
+                                        </div>
+       
+                                      </div>
+                                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                         </div>
+
+                     </div>
+                 </div>
+        </div>
+
+
+
+
+
+        <div class="modal fade" id="myAdminmodal">
+                 <div class="modal-dialog">
+                     <div class="modal-content">
+                         <div class="modal-header">
+                             <h3>Admin Login</h3>
+                         </div>
+
+                          <div class="modal-body">
+
+                              <div class="card">
+                   <div class="card-body">
+                       <div class="row">
+                           <div class="col pb-2">
+                               <center>
+                                   <img width="150px"  src="imgs/admin.png" />
+                               </center>
+                           </div>
+
+                           
+                       </div>
+               
+                       <div class="row">
+                           <div class="col">
+                               <label>Username</label>
+                               <div class="form-group">
+                                   <asp:TextBox class="form-control" ID="txtAdminusername" runat="server" placeholder="AdminUsername"></asp:TextBox>
+                               </div>
+                                <label>Password</label>
+                               <div class="form-group">
+                                   <asp:TextBox class="form-control" ID="txtAdminpassword" runat="server" placeholder="pasword" TextMode="Password"></asp:TextBox>
+                               </div>
+                               <div class="form-group">
+                                   <asp:Button CssClass="btn btn-success btn-block btn-lg" ID="loginAdmin" runat="server" Text="Login" />
+                               </div>
+                       
+                           </div>
+                       </div>
+                   </div>
+       
+                </div>
+
+
+                            
+
+
+                         </div>
+
+                     </div>
+                 </div>
+             </div>
+
+
+
+
+
+
+
+
+
+
+
+</form>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿#btnlogin {
+    background-color: #699DE6;
+    color: black;
+}
+
+    #btnlogin:hover {
+        background-color: #399DE6;
+        color: white;
+    }
+
+#btncancel {
+    background-color: #C40924;
+    color: black;
+}
+
+    #btncancel:hover {
+        background-color: #BE222F;
+        color: white;
+    }
+
+
+#btnSave {
+    background-color: #699DE6;
+    color: white;
+}
+    #btnSave:hover {
+        background-color: #399DE6;
+        color: white;
+    }
+
